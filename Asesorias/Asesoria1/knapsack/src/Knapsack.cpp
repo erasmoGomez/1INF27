@@ -6,7 +6,9 @@
 
 // Calcular total de combinaciones 2^n
 unsigned total_combinations(int n) {
+    // 0 1 0 0
     const unsigned totalComb = (1u << n);  // 2^n combinaciones
+    // 1 1 1 1
     return totalComb;
 }
 
@@ -32,6 +34,8 @@ bool evaluate_mask(const Item items[], int n, unsigned mask, int capacity,
     for (int j = 0; j < n; ++j) {
         // Comparamos la Mask con J, pero primero activamos el bit correspondiente de J
         // con 1u << j (1u) este 1u es un 1 pero unsigned para evitar pasarnos a números negativos con bits.
+        // mask : 0101
+        // j -> 1000 0100 0010 0001
         if (mask & (1u << j)) {
             //Si cumple, aumentamos el peso del item J al currWeight
             currWeight += items[j].weight;
@@ -75,10 +79,10 @@ void print_solution(const Item items[], int n, unsigned bestMask,
 void knapsackBruteForce(const Item items[], int n, int capacity, bool debug) {
 
     int bestValue = 0;
-    unsigned bestMask = 0u;
+    unsigned bestMask = 0u; // 0 unsigned 0 0 0 0, esto para evitar un numero negativo
     int bestWeight = 0;
 
-    const unsigned totalComb = total_combinations(n);
+    const unsigned totalComb = total_combinations(n); //16 combinaciones -> 2 ^ 4 -> 16
     if (debug)
         cout << "Cantidad de combinaciones posibles: " << totalComb << endl;
 
