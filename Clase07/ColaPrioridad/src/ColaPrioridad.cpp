@@ -3,6 +3,12 @@
 //
 #include "ColaPrioridad.hpp"
 
+int prioDe(char tipo) {
+    if (tipo == '1') return 1;
+    if (tipo == '2') return 2;
+    return 3;
+}
+
 static NodoCola* nuevoNodo(const Elemento &e) {
     NodoCola* n = new NodoCola;
     n->elem = e;
