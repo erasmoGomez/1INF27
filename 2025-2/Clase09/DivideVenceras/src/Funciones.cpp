@@ -51,44 +51,20 @@ int cuentaCeros(int *arr, int ini, int fin, int cont) {
 
 //int arreglo2[] = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8};
 int buscaSolo(int *arr, int inicio, int fin) {
-    // Caso base: cuando inicio == fin, encontramos el elemento único
-    if (inicio == fin)
-        return arr[inicio];
 
-    int medio = (inicio + fin) / 2;
-
-    // Aseguramos que 'medio' sea par para comparar con su siguiente
-    if (medio % 2 == 1)
-        medio--;
-
-    // Si el par está completo, el único está después
-    if (arr[medio] == arr[medio + 1])
-        return buscaSolo(arr, medio + 2, fin);
-    else
-        return buscaSolo(arr, inicio, medio);
 }
 
 // int arreglo3[] = {12, 24, 32, 12, 11, 10};
 
 int buscaMontana(int *arreglo, int inicio, int fin) {
 
-    if (inicio == fin) return arreglo[inicio];
-    int med = (inicio + fin) / 2;
-    if (arreglo[med] > arreglo[med + 1])
-        return buscaMontana(arreglo, inicio, med);
-    else
-        return buscaMontana(arreglo, med + 1, fin);
+
 }
 
 /*int arreglo4[] {5, 6, 1, 2, 3, 4};*/
 int buscaMenor(int *arreglo, int inicio, int fin) {
 
-    if (inicio == fin) return arreglo[inicio];
-    int med = (inicio + fin) / 2;
-    if (arreglo[med - 1] > arreglo[med])
-        return buscaMenor(arreglo, med, fin);
-    else
-        return buscaMenor(arreglo, inicio, med - 1);
+
 
 }
 
