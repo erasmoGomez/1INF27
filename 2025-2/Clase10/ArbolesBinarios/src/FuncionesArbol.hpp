@@ -24,4 +24,8 @@ void plantarNodoArbolBinario(struct NodoArbol *&nodo,
 
 void recorrer_in_order(struct ArbolBinario &arbol);
 
+void recorrer_pre_order(struct ArbolBinario &arbol);
+
+void recorrer_post_order(struct ArbolBinario &arbol);
+
 #endif //ARBOLESBINARIOS_FUNCIONESARBOL_HPP

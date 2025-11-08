@@ -46,6 +46,30 @@ void recorrer_in_order_recursivo(struct NodoArbol *nodo) {
     }
 }
 
+void recorrer_post_order_recursivo(struct NodoArbol *nodo) {
+    if (not esNodoVacio(nodo)) {
+        recorrer_post_order_recursivo(nodo->izq);
+        recorrer_post_order_recursivo(nodo->der);
+        imprimir_nodo(nodo);
+    }
+}
+
+void recorrer_pre_order_recursivo(struct NodoArbol *nodo) {
+    if (not esNodoVacio(nodo)) {
+        imprimir_nodo(nodo);
+        recorrer_pre_order_recursivo(nodo->izq);
+        recorrer_pre_order_recursivo(nodo->der);
+    }
+}
+
 void recorrer_in_order(ArbolBinario &arbol) {
     recorrer_in_order_recursivo(arbol.raiz);
+}
+
+void recorrer_post_order(ArbolBinario &arbol) {
+    recorrer_post_order_recursivo(arbol.raiz);
+}
+
+void recorrer_pre_order(ArbolBinario &arbol) {
+    recorrer_pre_order_recursivo(arbol.raiz);
 }

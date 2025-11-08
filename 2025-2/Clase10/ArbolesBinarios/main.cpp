@@ -31,5 +31,9 @@ int main() {
 
     cout<<"recorrido en order"<<endl;
     recorrer_in_order(arbol);
+    cout<<"\nrecorrido post order"<<endl;
+    recorrer_post_order(arbol);
+    cout<<"\nrecorrido pre order"<<endl;
+    recorrer_pre_order(arbol);
     return 0;
 }
