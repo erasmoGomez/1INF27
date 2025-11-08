@@ -28,7 +28,7 @@ int main() {
     //arbol NODO 100 HI hijo_izquierdo HD hijo_derecho
     plantarArbolBinario(arbol, hijo_izquierdo, {100}, hijo_derecho);
     //Hasta este punto tenemos el arbol armado.
-    
+
     cout<<"recorrido en order"<<endl;
     recorrer_in_order(arbol);
     return 0;

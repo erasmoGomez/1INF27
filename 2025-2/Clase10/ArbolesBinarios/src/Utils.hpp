@@ -6,5 +6,6 @@
 #define ARBOLESBINARIOS_UTILS_HPP
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 #endif //ARBOLESBINARIOS_UTILS_HPP

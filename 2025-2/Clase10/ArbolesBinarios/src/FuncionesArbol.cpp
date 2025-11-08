@@ -20,25 +20,26 @@ void plantarNodoArbolBinario(struct NodoArbol *&nodo,
                              struct NodoArbol *izq,
                              const struct ElementoArbol &elemento,
                              struct NodoArbol *der) {
-    struct NodoArbol * nuevo = new struct NodoArbol;
+    struct NodoArbol *nuevo = new struct NodoArbol;
     nuevo->der = der;
     nuevo->izq = izq;
     nuevo->elemento = elemento;
     nodo = nuevo;
 }
 
-void imprimir_nodo(struct NodoArbol *nodo){
-    cout<<nodo->elemento.valor<<endl;
+void imprimir_nodo(struct NodoArbol *nodo) {
+    cout << setw(5) << nodo->elemento.valor;
 }
 
 void plantarArbolBinario(ArbolBinario &arbol,
-                        const struct ArbolBinario &izq,
-                        const struct ElementoArbol &elemento,
-                        const struct ArbolBinario &der) {
+                         const struct ArbolBinario &izq,
+                         const struct ElementoArbol &elemento,
+                         const struct ArbolBinario &der) {
     plantarNodoArbolBinario(arbol.raiz, izq.raiz, elemento, der.raiz);
 }
-void recorrer_in_order_recursivo(struct NodoArbol * nodo ){
-    if(not esNodoVacio(nodo)){
+
+void recorrer_in_order_recursivo(struct NodoArbol *nodo) {
+    if (not esNodoVacio(nodo)) {
         recorrer_in_order_recursivo(nodo->izq);
         imprimir_nodo(nodo);
         recorrer_in_order_recursivo(nodo->der);
