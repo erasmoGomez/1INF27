@@ -2,38 +2,45 @@
 #include "src/FuncionesArbol.hpp"
 int main() {
     struct ArbolBinario arbol, arbolVacio;
-    struct ArbolBinario hijo_izquierdo, hijo_derecho;
-    struct ArbolBinario arbol1, arbol2, arbol3, arbol4;
+    struct ArbolBinario subarbol50, subarbol150;
+    struct ArbolBinario subarbol25, subarbol80, subarbol120, subarbol200;
     construir(arbol);
-    construir(arbolVacio);
+    construir(arbolVacio); //CONSTRUIR OBLIGATORIAMENTE
+    // PARA CONSTRUIR EL ARBOL, VAMOS DESDE EL NIVEL MAS ALTO HACIA EL MAS BAJO
     cout<<"Esta vacio"<< esArbolVacio(arbol)<<endl;
     /*           100
      *         /     \
      *       50      150
      *      /  \    /   \
      *    25   80 120   200
+     *  NULL NULL
      */
-    //arbol1 NODO 25 HI NULL HD NULL
-    plantarArbolBinario(arbol1, arbolVacio, {25}, arbolVacio);
-    //arbol2 NODO 80 HI NULL HD NULL
-    plantarArbolBinario(arbol2, arbolVacio, {80}, arbolVacio);
-    //arbol3 NODO 120 HI NULL HD NULL
-    plantarArbolBinario(arbol3, arbolVacio, {120}, arbolVacio);
-    //arbol4 NODO 200 HI NULL HD NULL
-    plantarArbolBinario(arbol4, arbolVacio, {200}, arbolVacio);
-    //hijo_izquierdo NODO 50 HI arbol1 HD arbol2
-    plantarArbolBinario(hijo_izquierdo, arbol1, {50}, arbol2);
-    //hijo_derecho NODO 150 HI arbol3 HD arbol4
-    plantarArbolBinario(hijo_derecho, arbol3, {150}, arbol4);
-    //arbol NODO 100 HI hijo_izquierdo HD hijo_derecho
-    plantarArbolBinario(arbol, hijo_izquierdo, {100}, hijo_derecho);
-    //Hasta este punto tenemos el arbol armado.
+    // NIVEL 3
+    //subarbol25 NODO 25 HI NULL HD NULL
+    plantarArbolBinario(subarbol25, arbolVacio, {25}, arbolVacio);
+    //subarbol80 NODO 80 HI NULL HD NULL
+    plantarArbolBinario(subarbol80, arbolVacio, {80}, arbolVacio);
+    //subarbol120 NODO 120 HI NULL HD NULL
+    plantarArbolBinario(subarbol120, arbolVacio, {120}, arbolVacio);
+    //subarbol200 NODO 200 HI NULL HD NULL
+    plantarArbolBinario(subarbol200, arbolVacio, {200}, arbolVacio);
 
-    cout<<"recorrido en order"<<endl;
+    // NIVEL 2
+    //subarbol50 NODO 50 HI subarbol25 HD subarbol80
+    plantarArbolBinario(subarbol50, subarbol25, {50}, subarbol80);
+    //subarbol150 NODO 150 HI subarbol120 HD subarbol200
+    plantarArbolBinario(subarbol150, subarbol120, {150}, subarbol200);
+
+    // NIVEL 1
+    //arbol NODO 100 HI subarbol50 HD subarbol150
+    plantarArbolBinario(arbol, subarbol50, {100}, subarbol150);
+    //Hasta este punto tenemos el arbol ARMADO, CONECTADO Y CON RESERVA DE MEMORIA CORRECTA.
+    // RECORDDOS Y SUS FUNCIONALIDADES
+    cout<<"recorrido en order"<<endl; // IMPRIME EN ORDEN EN UN ABB
     recorrer_in_order(arbol);
-    cout<<"\nrecorrido post order"<<endl;
+    cout<<"\nrecorrido post order"<<endl; // SE USA TAMBIEN PARA ELIMINAR NODOS EN UN ARBOL
     recorrer_post_order(arbol);
-    cout<<"\nrecorrido pre order"<<endl;
+    cout<<"\nrecorrido pre order"<<endl; // RECONSTRUCCION DE ARBOL
     recorrer_pre_order(arbol);
     return 0;
 }

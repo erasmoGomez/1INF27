@@ -16,14 +16,17 @@ bool esNodoVacio(struct NodoArbol *nodo) {
     return nodo == nullptr;
 }
 
-void plantarNodoArbolBinario(struct NodoArbol *&nodo,
+void plantarNodoArbolBinario(struct NodoArbol *& nodo,
                              struct NodoArbol *izq,
                              const struct ElementoArbol &elemento,
                              struct NodoArbol *der) {
+    // RESERVA DE MEMORIA
     struct NodoArbol *nuevo = new struct NodoArbol;
+    // HACER LAS CONEXIONES Y ASIGNACIONES
     nuevo->der = der;
     nuevo->izq = izq;
     nuevo->elemento = elemento;
+    // HACEMOS ESCAPAR A NODO
     nodo = nuevo;
 }
 
@@ -35,11 +38,13 @@ void plantarArbolBinario(ArbolBinario &arbol,
                          const struct ArbolBinario &izq,
                          const struct ElementoArbol &elemento,
                          const struct ArbolBinario &der) {
+    //Realizar el proceso a nivel de NODOS
     plantarNodoArbolBinario(arbol.raiz, izq.raiz, elemento, der.raiz);
 }
 
 void recorrer_in_order_recursivo(struct NodoArbol *nodo) {
-    if (not esNodoVacio(nodo)) {
+    // HI RAIZ HD
+    if (not esNodoVacio(nodo)) { //CB
         recorrer_in_order_recursivo(nodo->izq);
         imprimir_nodo(nodo);
         recorrer_in_order_recursivo(nodo->der);
@@ -47,7 +52,8 @@ void recorrer_in_order_recursivo(struct NodoArbol *nodo) {
 }
 
 void recorrer_post_order_recursivo(struct NodoArbol *nodo) {
-    if (not esNodoVacio(nodo)) {
+    // HI HD RAIZ
+    if (not esNodoVacio(nodo)) { //CB
         recorrer_post_order_recursivo(nodo->izq);
         recorrer_post_order_recursivo(nodo->der);
         imprimir_nodo(nodo);
@@ -55,7 +61,8 @@ void recorrer_post_order_recursivo(struct NodoArbol *nodo) {
 }
 
 void recorrer_pre_order_recursivo(struct NodoArbol *nodo) {
-    if (not esNodoVacio(nodo)) {
+    // RAIZ HI HD
+    if (not esNodoVacio(nodo)) { //CB
         imprimir_nodo(nodo);
         recorrer_pre_order_recursivo(nodo->izq);
         recorrer_pre_order_recursivo(nodo->der);
