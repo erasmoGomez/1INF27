@@ -157,7 +157,7 @@ ArbolBinario construir_arbol_arreglo(int *array, int n) {
 }
 
 void insertar_elemento_arreglo_arbol(NodoArbol *&nodo, int valor, int bit) {
-    if (esNodoVacio(nodo)) {
+    if (esNodoVacio(nodo)) { //Te caes del arbol
         plantarNodoArbolBinario(nodo, nullptr, {valor, bit}, nullptr);
         return;
     }

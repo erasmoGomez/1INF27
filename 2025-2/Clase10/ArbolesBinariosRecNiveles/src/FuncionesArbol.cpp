@@ -112,14 +112,16 @@ void recorrido_por_niveles(ArbolBinario &arbol) {
 
     Cola cola;
     construir_cola(cola);
-    encolar(cola, arbol.raiz);
+    encolar(cola, arbol.raiz); //* Coloca la raíz del árbol en una cola.
 
-    while (!esColaVacia(cola)) {
-        NodoArbol* actual = desencolar(cola);
-        imprimir_nodo(actual);
-
-        if (!esNodoVacio(actual->izq)) encolar(cola, actual->izq);
-        if (!esNodoVacio(actual->der)) encolar(cola, actual->der);
+    while (!esColaVacia(cola)) { // * Repite hasta vaciar la cola.
+        NodoArbol* actual = desencolar(cola); //   * Extrae el nodo del frente de la cola (lo “visitas”).
+        imprimir_nodo(actual); //Visitar
+        //Encola sus hijos izquierdo y derecho, si existen.
+        if (!esNodoVacio(actual->izq))
+            encolar(cola, actual->izq);
+        if (!esNodoVacio(actual->der))
+            encolar(cola, actual->der);
     }
 }
 
