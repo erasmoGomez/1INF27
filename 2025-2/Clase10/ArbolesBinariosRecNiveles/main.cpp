@@ -3,7 +3,7 @@
 #include "src/FuncionesCola.hpp"
 
 int main() {
-    struct ArbolBinario arbol, arbolVacio;
+    struct ArbolBinario arbol, arbolVacio, arbol_nivel;
     struct ArbolBinario subarbol50, subarbol150;
     struct ArbolBinario subarbol25, subarbol80, subarbol120, subarbol200;
     construir(arbol);
@@ -52,5 +52,15 @@ int main() {
     recorrido_por_niveles(arbol);
     cout<<"\nrecorrido por nivel recursivo"<<endl;
     recorrido_por_niveles_recursivo(arbol);
+
+    // INSERCIONES POR NIVEL
+    int a[] = {30, 20, 40, 50, 10};
+    int n = sizeof(a)/sizeof(a[0]);
+    cout<<"\n\nINSERCION BFS"<<endl;
+    cout<<"\nrecorrido por nivel recursivo"<<endl;
+    insertar_por_nivel(arbol_nivel, a, n);
+    recorrido_por_niveles_recursivo_salto(arbol_nivel);
+    imprimir_arbol_horizontal(arbol_nivel.raiz);
+
     return 0;
 }
