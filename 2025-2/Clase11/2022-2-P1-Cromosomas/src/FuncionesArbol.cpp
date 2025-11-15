@@ -98,7 +98,7 @@ void recorrer_pre_order(ArbolBinario &arbol) {
       B   C
      / \   \
     D   E   F
-El recorrido BFS sería:
+ El recorrido BFS sería:
 A → B → C → D → E → F
 
 Cómo funciona?
@@ -156,6 +156,13 @@ ArbolBinario construir_arbol_arreglo(int *array, int n) {
     return arbol;
 }
 
+/*
+ *       0,0
+       /      \
+    10,0     10, 1
+    /  \      / \
+  Null Null Null Null
+ */
 void insertar_elemento_arreglo_arbol(NodoArbol *&nodo, int valor, int bit) {
     if (esNodoVacio(nodo)) { //Te caes del arbol
         plantarNodoArbolBinario(nodo, nullptr, {valor, bit}, nullptr);

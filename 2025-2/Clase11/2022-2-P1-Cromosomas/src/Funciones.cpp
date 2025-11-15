@@ -13,4 +13,3 @@ int contar_combinaciones_recursivo(NodoArbol *&nodo, int peso){
     return  contar_combinaciones_recursivo(nodo->izq, peso) +
             contar_combinaciones_recursivo(nodo->der, peso);
 }
-

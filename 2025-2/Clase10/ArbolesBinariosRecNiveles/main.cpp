@@ -38,7 +38,7 @@ int main() {
     plantarArbolBinario(arbol, subarbol50, {100}, subarbol150);
     //Hasta este punto tenemos el arbol ARMADO, CONECTADO Y CON RESERVA DE MEMORIA CORRECTA.
 
-    // RECORDDOS Y SUS FUNCIONALIDADES
+    // RECORRIDOS Y SUS FUNCIONALIDADES
     cout<<"\nRECORRIDOS DFS"<<endl;
     cout<<"\nrecorrido en order"<<endl; // IMPRIME EN ORDEN EN UN ABB
     recorrer_in_order(arbol);
@@ -54,7 +54,7 @@ int main() {
     recorrido_por_niveles_recursivo(arbol);
 
     // INSERCIONES POR NIVEL
-    int a[] = {30, 20, 40, 50, 10};
+    int a[] = {30, 20, 40, 50, 25};
     int n = sizeof(a)/sizeof(a[0]);
     cout<<"\n\nINSERCION BFS"<<endl;
     cout<<"\nrecorrido por nivel recursivo"<<endl;

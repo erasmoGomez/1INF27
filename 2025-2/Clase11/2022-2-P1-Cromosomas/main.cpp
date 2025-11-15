@@ -9,7 +9,7 @@ int main() {
 
     int n = sizeof(array) / sizeof(array[0]);
     cout << n << endl;
-    ArbolBinario arbol = construir_arbol_arreglo(array, n);
+    ArbolBinario arbol = construir_arbol_arreglo(array, n); // construir_arbol_tad
     recorrido_por_niveles(arbol);
     int cantidad_combinaciones = contar_combinaciones(arbol, peso);
     cout << "\nNúmero de combinaciones: " << cantidad_combinaciones << endl;

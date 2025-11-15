@@ -113,8 +113,11 @@ Cómo funciona?
 El uso de la cola (FIFO) garantiza que los nodos se visiten en orden de aparición por niveles.
  */
 
+// Cola:
+// Visitar: A B C D E F
 
-void recorrido_por_niveles(ArbolBinario &arbol) {
+
+void recorrido_por_niveles(ArbolBinario &arbol) { //Iterativo
     if (esArbolVacio(arbol)) return;
 
     Cola cola;
@@ -123,7 +126,7 @@ void recorrido_por_niveles(ArbolBinario &arbol) {
 
     while (!esColaVacia(cola)) { // * Repite hasta vaciar la cola.
         NodoArbol *actual = desencolar(cola); //   * Extrae el nodo del frente de la cola (lo “visitas”).
-        imprimir_nodo(actual); //Visitar
+        imprimir_nodo(actual); //Visitar, imprimir, modificar
         //Encola sus hijos izquierdo y derecho, si existen.
         if (!esNodoVacio(actual->izq))
             encolar(cola, actual->izq);
@@ -133,10 +136,10 @@ void recorrido_por_niveles(ArbolBinario &arbol) {
 }
 
 void bfs_rec(Cola &cola) {
-    if (esColaVacia(cola)) return;
+    if (esColaVacia(cola)) return; //CB
 
     NodoArbol *actual = desencolar(cola);
-    imprimir_nodo(actual);
+    imprimir_nodo(actual); //Visitar
 
     if (!esNodoVacio(actual->izq)) encolar(cola, actual->izq);
     if (!esNodoVacio(actual->der)) encolar(cola, actual->der);
@@ -160,8 +163,13 @@ NodoArbol *crearNodo(int valor) {
     return nuevo;
 }
 
-
-void insertar_por_nivel(ArbolBinario &arbol, int *a, int n) {
+/*      A
+       / \
+      B   C
+     / \  /\
+    D   E
+*/
+ void insertar_por_nivel(ArbolBinario &arbol, int *a, int n) {
     construir(arbol);
     for (int i = 0; i < n; i++) {
         int valor = a[i];
