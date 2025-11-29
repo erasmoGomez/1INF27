@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33a6d7bc-8873-4dff-9a92-66fdaef6105e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Frame.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Funciones.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Funciones.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Nodo.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Pila.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/L5/P2/EliminaNodo/src/Utils.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LabsPasados/2025-1/EX2/P1/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../LabsPasados/2025-1/EX2/P1/.idea/editor.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="3688EDyuQ1HnIASW1FfUM3Bdd1F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/erasmo/Documents/erasmo/pucp/git/1INF27/2025-2/Clase13",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33a6d7bc-8873-4dff-9a92-66fdaef6105e" name="Changes" comment="" />
+      <created>1764376725146</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764376725146</updated>
+      <workItem from="1764376726331" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
