@@ -10,8 +10,8 @@ int robot(int x, int y, int n, int m, int mapa[][M]) {
     //Caso Base
     if (x == n - 1 and y == m - 1) return mapa[x][y];
     //Caso Recursivo + Boundary
-    if (y + 1 < m) derecha = robot(x, y + 1, n, m, mapa);
-    if (x + 1 < n) abajo = robot(x + 1, y, n, m, mapa);
+    if (y + 1 < m) derecha = robot(x, y + 1, n, m, mapa); // Recursividad Derecha
+    if (x + 1 < n) abajo = robot(x + 1, y, n, m, mapa); // Recursividad Abajo
     //Condiciones de Recojo
     if (derecha > abajo) return derecha + mapa[x][y];
     return abajo + mapa[x][y];

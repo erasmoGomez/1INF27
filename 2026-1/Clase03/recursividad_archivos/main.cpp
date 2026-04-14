@@ -11,7 +11,7 @@ namespace fs = std::filesystem;
  * @param ruta  Directorio inicial a explorar
  */
 
-void listar_recursivo(const fs::path& ruta)
+void listar_recursivo(const fs::path& ruta, int i)
 {
     // Imprime la propia ruta (puedes omitir esta línea si solo quieres contenidos)
     std::cout << ruta.string() << '\n';
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     try
     {
         // Usa el primer argumento como ruta; si no hay, toma el directorio actual
-        fs::path raiz = "/Users/tsutomu/Downloads/data_set";
+        fs::path raiz = "/Users/tsutomu/Downloads/Twitch";
         cout<<raiz<<endl;
         if (!fs::exists(raiz) || !fs::is_directory(raiz))
         {
