@@ -49,7 +49,7 @@ int main() {
     //    - Libera SOLO el prefijo exclusivo de l2 (hasta 'inter').
     //    - Luego destruye l1 completo (lo que también libera la cola compartida).
     destruir_hasta(l2, inter);
-    destruir(l1);
+    destruir(l1); //Esta ya la tienen
     // l2.head ya apunta a 'inter' (que fue borrado por destruir(l1)); opcionalmente:
     l2.head = nullptr;
 

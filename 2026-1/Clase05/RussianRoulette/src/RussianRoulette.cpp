@@ -34,7 +34,7 @@ int lista_borrar_siguiente(Lista& L, NodoLista*& p) {
 
 int russian_roulette(int n, int seed) {
     if (n <= 0) return -1;
-    srand(seed); // o srand((unsigned)time(NULL));
+    srand(seed); // o srand((int)time(NULL));
 
     Lista L{}; lista_init(L);
     for (int i = 1; i <= n; ++i) lista_push_back(L, i);
@@ -44,7 +44,7 @@ int russian_roulette(int n, int seed) {
         int tam = lista_tam(L);
         int k   = 1 + (rand() % tam);     // k ∈ [1, tam]
         cout<<setw(5)<<k;
-        int pasos = (k - 1) % tam;        // reducir vueltas
+        int pasos = (k - 1) % tam;        // reducir vueltas para hacerlo mas eficiente
         cout<<setw(5)<<pasos<<endl;
         lista_avanzar(p, pasos);
         lista_borrar_siguiente(L, p);

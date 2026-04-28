@@ -20,7 +20,7 @@ NodoLista* obtener_k_esimo(NodoLista* head, int k) {
 // Retorna el puntero al nodo de intersección (o nullptr si no se pudo).
 NodoLista* forzar_interseccion(Lista& l1, Lista& l2, int k_en_l1) {
     NodoLista* objetivo = obtener_k_esimo(l1.head, k_en_l1);
-    if (!objetivo) return nullptr;
+    if (!objetivo) return nullptr; //Validacion adicion.
 
     NodoLista* tail_l2 = obtener_nodo_final(l2);
     if (!tail_l2) {
@@ -32,18 +32,21 @@ NodoLista* forzar_interseccion(Lista& l1, Lista& l2, int k_en_l1) {
     return objetivo;
 }
 
-/* ---------- Algoritmo de intersección (dos punteros) ---------- */
-// Si hay intersección, ambos punteros se alinean tras alternar de lista.
+/* ---------- Algoritmo de intersección con dos punteros ---------- */
+// Detecta si dos listas comparten un mismo nodo en memoria.
+// Cada puntero recorre su lista y luego continúa por la otra.
+// Si existe intersección, ambos llegan al nodo compartido al mismo tiempo.
+// Si no existe, ambos terminan en nullptr.
 NodoLista* obtener_interseccion(const Lista& a, const Lista& b) {
     NodoLista* p = a.head;
     NodoLista* q = b.head;
 
-    // Recorremos como máximo (lenA + lenB + 1) pasos hacia el encuentro o nullptr.
     while (p != q) {
         p = (p == nullptr) ? b.head : p->siguiente;
         q = (q == nullptr) ? a.head : q->siguiente;
     }
-    return p; // puede ser nullptr si no hay intersección
+
+    return p; // Nodo de intersección o nullptr
 }
 
 /* ---------- Limpieza segura cuando hay intersección ---------- */
@@ -53,11 +56,11 @@ NodoLista* obtener_interseccion(const Lista& a, const Lista& b) {
  * Esta función libera nodos de l2 hasta (pero sin incluir) 'stop'.
  */
 void destruir_hasta(Lista& l, NodoLista* stop_exclusive) {
-    NodoLista* cur = l.head;
-    while (cur && cur != stop_exclusive) {
-        NodoLista* nxt = cur->siguiente;
-        delete cur;
-        cur = nxt;
+    NodoLista* rec = l.head;
+    while (rec and rec != stop_exclusive) {
+        NodoLista* nxt = rec->siguiente; //Aca no eliminar directamtente rec sin antes recuperar el next
+        delete rec;
+        rec = nxt;
     }
     l.head = stop_exclusive; // el resto podría ser compartido; no tocar aquí
 }
