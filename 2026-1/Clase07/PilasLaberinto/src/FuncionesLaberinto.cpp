@@ -70,6 +70,8 @@ bool laberinto(struct Pila & pila, int tablero[3][5], int fil, int col){
         if(terminado)
             tablero[getX(pos)][getY(pos)] = RUTA;
     }
+    // desapilar(pila);
+    // laberinto(pila, tablero,  fil,  col);
     return terminado;
 }
 
